@@ -25,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
     private int random_Dice5;
     private int count;
     int NewScore;
-    private int[] results = {random_Dice1,random_Dice2,random_Dice3,random_Dice4,random_Dice5};
-    private int[] results2 = {random_Dice1,random_Dice2,random_Dice3,random_Dice4,random_Dice5};
+    private int GameScore;
+    private int[] Results = {0,0,0,0,0};
+    private int[] Results2 = {0,0,0,0,0};
+    private int Countnumber = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,40 +70,54 @@ public class MainActivity extends AppCompatActivity {
         random_Dice5 = (int) (Math.random() * 6 + 1);
         Dice_5.setText(Integer.toString(random_Dice5));
 
-        results[0] = random_Dice1;
-        results[1] = random_Dice2;
-        results[2] = random_Dice3;
-        results[3] = random_Dice4;
-        results[4] = random_Dice5;
+        Results[0] = random_Dice1;
+        Results[1] = random_Dice2;
+        Results[2] = random_Dice3;
+        Results[3] = random_Dice4;
+        Results[4] = random_Dice5;
 
         updateScore();
         updateRollCount();
     }
 
     void ResetGame(){
+        count = 0;
+        NewScore = 0;
+        GameScore = 0;
         Dice_1.setText("?");
         Dice_2.setText("?");
         Dice_3.setText("?");
         Dice_4.setText("?");
         Dice_5.setText("?");
-        Roll_Result.setText("Wynik tego losowania: 0");
-        Game_Result.setText("Wynik gry: 0");
-        Roll_Count.setText("Liczba rzutów: 0");
+        Roll_Result.setText("Wynik tego losowania: " + NewScore);
+        Game_Result.setText("Wynik gry: " + GameScore);
+        Roll_Count.setText("Liczba rzutów: " + count);
         ;}
 
     void updateRollCount() {
         count++;
         Roll_Result.setText("Wynik tego losowania: " + NewScore);
+        Game_Result.setText("Wynik gry: " + GameScore);
         Roll_Count.setText("Liczba rzutów: " + count);
     }
 
     void updateScore() {
-        for (int i = 0; i < 5; i++) {
-           for (int j = 0; j < 5; j++) {
-               if (results[i] == results2[j]) {
-                   NewScore = results[i] + results[j];
-               }
-           }
-        }
+        for(int i=0; i<5; i++){
+            Countnumber = 1;
+            for(int j=i+1; j<5; j++){
+                if(Results[i] == Results[j] && Results2[j] == 0){
+                    if(Countnumber == 1){
+                        NewScore += Results[i] + Results[j];
+                    } else {
+                        NewScore += Results[j];
+                    };
+
+                    Results2[j] = Results[j];
+                    Countnumber++;
+                };
+            };
+        };
+
+        GameScore += NewScore;
     }
 }
