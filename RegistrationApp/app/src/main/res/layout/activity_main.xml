@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegisterText"
+        android:text="Rejestruj konto"
+        android:background="#008080"
+        android:textColor="@color/white"
+        android:textSize="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EmailText"
+        android:text="Podaj e-mail: "
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailEdit"
+        android:hint="email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PasswordText"
+        android:text="Podaj hasło: "
+        android:textColor="@color/black"
+        android:textSize="15dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordEdit"
+        android:hint="Hasło"
+        android:inputType="textPassword"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordrepeatEdit"
+        android:hint="Powtórz hasło"
+        android:inputType="textPassword"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        android:text="ZATWIERDŹ"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NotificationText"
+        android:text="Autor: Adrian Stańczak "
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
