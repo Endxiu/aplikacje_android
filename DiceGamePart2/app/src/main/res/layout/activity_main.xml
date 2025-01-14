@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5DC"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#A52A2A"
+        android:gravity="center"
+        android:text="Gra w kości. Autor: Adrian Stańczak"
+        android:textColor="@color/white" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#D2691E"
+        android:gravity="center"
+        android:text="RZUĆ KOŚĆMI"
+        app:cornerRadius="0dp"
+        android:id="@+id/roll_dices"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Kostka1"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
+            android:layout_margin="9dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="?"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Kostka2"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
+            android:layout_margin="9dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="?"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Kostka3"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
+            android:layout_margin="9dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="?"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Kostka4"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
+            android:layout_margin="9dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="?"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/Kostka5"
+            android:layout_width="57dp"
+            android:layout_height="60dp"
+            android:layout_margin="9dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="?"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imgdice1"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/blank"/>
+        <ImageView
+            android:id="@+id/imgdice2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/blank"/>
+        <ImageView
+            android:id="@+id/imgdice3"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/blank"/>
+        <ImageView
+            android:id="@+id/imgdice4"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/blank"/>
+        <ImageView
+            android:id="@+id/imgdice5"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:src="@drawable/blank"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/wynik_losowania"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Wynik tego losowania: 0" />
+    <!--        android:textColor="#ffffff"-->
+
+    <TextView
+        android:id="@+id/wynik_gry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Wynik gry: 0" />
+    <!--        android:textColor="#ffffff"-->
+
+    <TextView
+        android:id="@+id/liczba_rzutow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Liczba rzutów: 0" />
+    <!--        android:textColor="#ffffff"-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#D2691E"
+        android:gravity="center"
+        android:text="RESETUJ WYNIK"
+        app:cornerRadius="0dp"
+        android:id="@+id/reset"/>
+</LinearLayout>
