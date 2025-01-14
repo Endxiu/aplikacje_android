@@ -51,14 +51,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 rollDice();
                 UpdateScore();
-                int rand1 = (int) (Math.random() * 6 + 1);
-                int rand2 = (int) (Math.random() * 6 + 1);
-                int rand3 = (int) (Math.random() * 6 + 1);
-                int rand4 = (int) (Math.random() * 6 + 1);
-                int rand5 = (int) (Math.random() * 6 + 1);
-                int[] liczs = {rand1, rand2, rand3, rand4, rand5};
-                for(int i=0; i<tabplcs.length;i++) {
-                    tabplcs[i].setImageResource(tabimgs[liczs[i]-1]);    }
             }
 
         });
@@ -91,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         wyniki[2] = rkosc3;
         wyniki[3] = rkosc4;
         wyniki[4] = rkosc5;
+        for(int i=0; i<tabplcs.length;i++) {
+            tabplcs[i].setImageResource(tabimgs[wyniki[i]-1]);    }
         iwynikt=rkosc1+rkosc2;
     }
 
