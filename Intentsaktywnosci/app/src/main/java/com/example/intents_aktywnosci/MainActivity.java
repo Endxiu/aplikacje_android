@@ -3,6 +3,7 @@ package com.example.intents_aktywnosci;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -15,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button buttonnewactivity = findViewById(R.id.ActivityButton);
-        buttonnewactivity.setOnClickListener(v -> {
+        TextView email = findViewById(R.id.email);
+        String message = getIntent().getStringExtra("message");
+        email.setText(message);
+        Button buttonNewA = findViewById(R.id.newActivity);
+        buttonNewA.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-            intent.putExtra("message", "Witajcie z MainActivity");
+            intent.putExtra("message","mmemememe");
             startActivity(intent);
         });
-        };
+        }
     }
