@@ -6,11 +6,21 @@
     android:paddingRight="16dp"
     android:orientation="vertical"
     android:gravity="center">
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:text="Powiadomienie"/>
-
+        android:text="Powiadomienie krótkie"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:text="Powiadomienie długie"
+        android:backgroundTint="#cc6699"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:text="Powiadomienie obraz"
+        android:backgroundTint="#dd91ef"/>
 </LinearLayout>
