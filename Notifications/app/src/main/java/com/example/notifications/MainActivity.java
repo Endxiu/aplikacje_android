@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, CHANNEL_ID)
                         .setSmallIcon(R.drawable.blank)
-                        .setContentTitle("I remember you was conflicted")
-                        .setContentText("Misusing your influence\n"+"Sometimes I did the same\n")
+                        .setContentTitle("Powiadomienie krótkie")
+                        .setContentText("I can't wait for you to shut me up\n" + "and make me hip like badass")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setContentIntent(pendingIntent)
                         .setAutoCancel(true);
@@ -98,29 +98,35 @@ public class MainActivity extends AppCompatActivity {
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, CHANNEL_ID)
                         .setSmallIcon(R.drawable.gnx)
-                        .setContentTitle("I remember you was conflicted")
-                        .setContentText("Misusing your influence")
-                        .setStyle(new NotificationCompat.BigTextStyle().bigText("Misusing your influence\n" +
-                                "Sometimes I did the same\n" +
-                                "Abusing my power, full of resentment\n" +
-                                "Resentment that turned into a deep depression\n" +
-                                "Found myself screaming in the hotel room\n" +
-                                "I didn’t wanna self destruct\n" +
-                                "The evils of Lucy was all around me\n" +
-                                "So I went running for answers\n" +
-                                "Until I came home\n" +
-                                "But that didn’t stop survivor’s guilt\n" +
-                                "Going back and forth trying to convince myself the stripes I earned\n" +
-                                "Or maybe how A-1 my foundation was\n" +
-                                "But while my loved ones was fighting the continuous war back in the city, I was entering a new one\n" +
-                                "A war that was based on apartheid and discrimination\n" +
-                                "Made me wanna go back to the city and tell the homies what I learned\n" +
-                                "The word was respect\n" +
-                                "Just because you wore a different gang color than mine's\n" +
-                                "Doesn’t mean I can’t respect you as a black man\n" +
-                                "Forgetting all the pain and hurt we caused each other in these streets\n" +
-                                "If I respect you, we unify and stop the enemy from killing us\n" +
-                                "But I don’t know, I’m no mortal man, maybe I’m just another nigga"))
+                        .setContentTitle("Powiadomienie długie")
+                        .setContentText("Msi Shut me up!")
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText("Msi Shut me up!\n" +
+                                "The bass, the rock, the mic, the treble\n" +
+                                "I like my coffee black, just like my metal\n" +
+                                "With the bass, the rock, the mic, the treble\n" +
+                                "I like my coffee black just like my metal\n" +
+                                "Cause I can't wait for you to knock me up\n" +
+                                "In a minute, minute, in a fuckin' minute\n" +
+                                "I can't wait for you to knock me up\n" +
+                                "In a minute, minute, in a second\n" +
+                                "I can't wait for you to shut me up and make me hip like badass\n" +
+                                "I can't wait for you to shut me up\n" +
+                                "Shut it up\n" +
+                                "I can't wait for you to shut me up and make me hip like badass\n" +
+                                "I can't wait for you to shut me up\n" +
+                                "Shut it up\n" +
+                                "La, la, la\n" +
+                                "(Ooh) la, la, la\n" +
+                                "(Ooh) la, la, la\n" +
+                                "(Ooh)\n" +
+                                "The bass, the rock, the mic, the treble\n" +
+                                "I like my coffee black, just like my metal\n" +
+                                "With the bass, the rock, the mic, the treble\n" +
+                                "I like my coffee black just like my metal\n" +
+                                "Cause I can't wait for you to nock me up\n" +
+                                "In a minute, minute, in a fuckin' minute\n" +
+                                "I can't wait for you to nock me up\n" +
+                                "In a minute, minute, in a second\n"))
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setContentIntent(pendingIntent)
                         .setAutoCancel(true);
