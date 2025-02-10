@@ -1,26 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:orientation="vertical"
-    android:gravity="center">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_marginTop="100dp">
+
     <Button
+        android:id="@+id/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="Powiadomienie krótkie"/>
+        android:layout_gravity="center"
+        android:text="Powiadomienie" />
+
     <Button
+        android:id="@+id/ButtonLong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:text="Powiadomienie długie"
-        android:backgroundTint="#cc6699"/>
+        android:layout_gravity="center"
+        android:text="Długie Powiadomienie" />
+
     <Button
+        android:id="@+id/PictureButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:text="Powiadomienie obraz"
-        android:backgroundTint="#dd91ef"/>
+        android:layout_gravity="center"
+        android:text="Powiadomienie Zdjecie" />
+
+    <Button
+        android:id="@+id/CustomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie custom" />
+
+    <Button
+        android:id="@+id/CustomLongButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie customlong" />
+
+    <Button
+        android:id="@+id/CustomPictureButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie custom picture" />
+    <Button
+        android:id="@+id/ButtonAddLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Powiadomienie add line" />
+
 </LinearLayout>

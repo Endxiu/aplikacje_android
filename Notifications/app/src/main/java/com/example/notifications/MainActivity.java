@@ -5,11 +5,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
+import android.graphics.Bitmap;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "my_chanel_id";
+    private static int ID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +29,43 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         createNotificationChannel();
-        Button button = findViewById(R.id.button);
-        Button button2 = findViewById(R.id.button2);
-        Button button3 = findViewById(R.id.button3);
+
+        Button button = findViewById(R.id.Button);
         button.setOnClickListener(v->{
             sendNotification();
         });
-        button2.setOnClickListener(v->{
+
+        Button Buttonlong = findViewById(R.id.ButtonLong);
+        Buttonlong.setOnClickListener(v->{
             sendNotificationLong();
         });
-        button3.setOnClickListener(v->{
-            sendNotificationIMG();
+        Button ButtonPicture = findViewById(R.id.PictureButton);
+        ButtonPicture.setOnClickListener(v->{
+            sendNotificationPicture();
+        });
+
+        Button ButtonCustom = findViewById(R.id.CustomButton);
+        ButtonCustom.setOnClickListener(v->{
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_LOW, this,"Nowe powiadomienie","skibidi", null);
+            ID++;
+        });
+
+        Button ButtonCustomlong = findViewById(R.id.CustomLongButton);
+        ButtonCustomlong.setOnClickListener(v->{
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_DEFAULT,this,"Długie custom powiadomienie","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", 1);
+            ID++;
+        });
+
+        Button ButtonCustomPicture = findViewById(R.id.CustomPictureButton);
+        ButtonCustomPicture.setOnClickListener(v -> {
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_HIGH, this,"Faggot","Skibidi",2);
+            ID++;
+        });
+
+        Button ButtonAddLine = findViewById(R.id.ButtonAddLine);
+        ButtonAddLine.setOnClickListener(v -> {
+            NotificationHelper.setNotification(ID,NotificationHelper.CHANNEL_ID_DEFAULT, this,"Pierwsza linia tekstu","Skibidi",3);
+            ID++;
         });
     }
     private void createNotificationChannel() {
@@ -70,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.blank)
-                        .setContentTitle("Powiadomienie krótkie")
-                        .setContentText("I can't wait for you to shut me up\n" + "and make me hip like badass")
+                        .setSmallIcon(R.drawable.gnx)
+                        .setContentTitle("Nowe Powiadomienie 3TP-E")
+                        .setContentText("To jest tekst powiadomienia")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setContentIntent(pendingIntent)
                         .setAutoCancel(true);
@@ -80,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 NotificationManagerCompat.from(this);
         notificationManager.notify(1,builder.build());
     }
+
+
     private void sendNotificationLong(){
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
@@ -88,53 +117,28 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[]{android.Manifest.permission.POST_NOTIFICATIONS},1);
                 return;
             }
+
+
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+
+            PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+            NotificationCompat.Builder builder =
+                    new NotificationCompat.Builder(this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.blank)
+                            .setContentTitle("Długie Powiadomienie 3TP-e")
+                            .setStyle(new NotificationCompat.BigTextStyle().bigText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum vitae ligula nec aliquam. Suspendisse ac quam odio. Nunc feugiat turpis ut justo volutpat, in efficitur ante condimentum. Proin ante est, aliquam ac orci sit amet, scelerisque aliquam arcu. Integer quis purus nisi. Mauris sit amet accumsan nisi. Integer sed imperdiet mi, luctus gravida est. Praesent condimentum at nunc in posuere. Nam tempus nunc vitae quam pellentesque luctus. Fusce ultrices iaculis dapibus. Morbi nec ultricies nisl. Suspendisse est eros, semper nec velit eu, aliquam volutpat nunc. Fusce orci nulla, feugiat et augue vitae"))
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                            .setContentIntent(pendingIntent)
+                            .setAutoCancel(true);
+            NotificationManagerCompat notificationManager =
+                    NotificationManagerCompat.from(this);
+            notificationManager.notify(1,builder.build());
         }
-
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.gnx)
-                        .setContentTitle("Powiadomienie długie")
-                        .setContentText("Msi Shut me up!")
-                        .setStyle(new NotificationCompat.BigTextStyle().bigText("Msi Shut me up!\n" +
-                                "The bass, the rock, the mic, the treble\n" +
-                                "I like my coffee black, just like my metal\n" +
-                                "With the bass, the rock, the mic, the treble\n" +
-                                "I like my coffee black just like my metal\n" +
-                                "Cause I can't wait for you to knock me up\n" +
-                                "In a minute, minute, in a fuckin' minute\n" +
-                                "I can't wait for you to knock me up\n" +
-                                "In a minute, minute, in a second\n" +
-                                "I can't wait for you to shut me up and make me hip like badass\n" +
-                                "I can't wait for you to shut me up\n" +
-                                "Shut it up\n" +
-                                "I can't wait for you to shut me up and make me hip like badass\n" +
-                                "I can't wait for you to shut me up\n" +
-                                "Shut it up\n" +
-                                "La, la, la\n" +
-                                "(Ooh) la, la, la\n" +
-                                "(Ooh) la, la, la\n" +
-                                "(Ooh)\n" +
-                                "The bass, the rock, the mic, the treble\n" +
-                                "I like my coffee black, just like my metal\n" +
-                                "With the bass, the rock, the mic, the treble\n" +
-                                "I like my coffee black just like my metal\n" +
-                                "Cause I can't wait for you to nock me up\n" +
-                                "In a minute, minute, in a fuckin' minute\n" +
-                                "I can't wait for you to nock me up\n" +
-                                "In a minute, minute, in a second\n"))
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setContentIntent(pendingIntent)
-                        .setAutoCancel(true);
-        NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(this);
-        notificationManager.notify(1,builder.build());
     }
-    private void sendNotificationIMG(){
+    private void sendNotificationPicture(){
+
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.hweir);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
             if(checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS)
@@ -142,24 +146,24 @@ public class MainActivity extends AppCompatActivity {
                 requestPermissions(new String[]{android.Manifest.permission.POST_NOTIFICATIONS},1);
                 return;
             }
+
+
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+
+            PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent,
+                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+            NotificationCompat.Builder builder =
+                    new NotificationCompat.Builder(this, CHANNEL_ID)
+                            .setSmallIcon(R.drawable.blank)
+                            .setContentTitle("Fucking faggot")
+                            .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap))
+                            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                            .setContentIntent(pendingIntent)
+                            .setAutoCancel(true);
+            NotificationManagerCompat notificationManager =
+                    NotificationManagerCompat.from(this);
+            notificationManager.notify(1,builder.build());
         }
-
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,0, intent,
-                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.hweir)
-                        .setContentTitle("SEE AS I SEE")
-                        .setContentText("FEEL WITH ME")
-                        .setStyle(new NotificationCompat.BigPictureStyle().bigPicture(bitmap))
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setContentIntent(pendingIntent)
-                        .setAutoCancel(true);
-        NotificationManagerCompat notificationManager =
-                NotificationManagerCompat.from(this);
-        notificationManager.notify(1,builder.build());
     }
 }
