@@ -37,6 +37,7 @@ public class NotificationHelper  extends MainActivity {
 
     }
 
+
     public static void setNotification(int NOTIFICATION_ID,String CHANNEL_ID, AppCompatActivity activity, String title, String message, Integer style){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (ContextCompat.checkSelfPermission(activity, android.Manifest.permission.POST_NOTIFICATIONS)
