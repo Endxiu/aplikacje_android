@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Powiadomienie z długim tekstem"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="130dp"
         android:backgroundTint="#AA336A"/>
 
     <Button
